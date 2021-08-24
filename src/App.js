@@ -53,24 +53,35 @@ class App extends React.Component {
   //   <p>Length Of Day: 4222.6 hours</p>
   // </div>
 
-  renderPlanets() {
-    return planetData.map((planet, idx) => {
-      return (
-        <div key={idx}>
-        <h2>{idx}. {planet.name}</h2>
-        <p>Length of Day(hrs):{planet.lengthOfDay}</p>
-        </div>
-      )
-    })
-  }
+  // renderPlanets() {
+  //   return planetData.map((planet, idx) => {
+  //     return (
+  //       <div key={idx}>
+  //       <h2>{idx}. {planet.name}</h2>
+  //       <p>Length of Day(hrs):{planet.lengthOfDay}</p>
+  //       </div>
+  //     )
+  //   })
+  // }
 
 
   // 5. Given the array of planet data 'find' the planet with the name
-  // of 'Earth' and render it's name, diameter, and length of day. Use
+  // of 'Earth' and render its name, diameter, and length of day. Use
   // one of the array iterator methods to find the planet.
-  // renderPlanets() {
-  //   // Place code here
-  // }
+  renderPlanets() {
+    const earth = planetData.find((planet) => {
+      return planet.name === 'Earth' 
+    })
+        const earthData = (
+          <div>
+            <h2>{earth.name}</h2>
+            <p>{earth.diameter}</p>
+            <p>Length of Day(hrs):{earth.lengthOfDay}</p>
+          </div>
+        )
+    return earthData
+  }
+  
 
 
   // 6. Given the array of planet data 'find' the planet with the length
