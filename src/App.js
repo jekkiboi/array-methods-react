@@ -32,20 +32,20 @@ class App extends React.Component {
   // 3. Given the array of planet data, map through the array to
   // render a list displaying just the name and length of day of
   // each planet.
-  renderPlanets() {
-    return planetData.map((planet) => {
-      return (
-        <div>
-        <h2>{planet.name}</h2>
-        <p>Length of Day: {planet.lengthOfDay}</p>
-        </div>
-      )
-    })
-  }
+  // renderPlanets() {
+  //   return planetData.map((planet) => {
+  //     return (
+  //       <div>
+  //       <h2>{planet.name}</h2>
+  //       <p>Length of Day(hrs):{planet.lengthOfDay}</p>
+  //       </div>
+  //     )
+  //   })
+  // }
 
 
   // 4. Given the array of planet data, map through the array to
-  // render a list display the name and length of day of each
+  // render a list displaying the name and length of day of each
   // planet. Prepend each planet name with it's index in the array.
   // For example..
   // <div>
@@ -53,9 +53,16 @@ class App extends React.Component {
   //   <p>Length Of Day: 4222.6 hours</p>
   // </div>
 
-  // renderPlanets() {
-  //   // Place code here
-  // }
+  renderPlanets() {
+    return planetData.map((planet, idx) => {
+      return (
+        <div key={idx}>
+        <h2>{idx}. {planet.name}</h2>
+        <p>Length of Day(hrs):{planet.lengthOfDay}</p>
+        </div>
+      )
+    })
+  }
 
 
   // 5. Given the array of planet data 'find' the planet with the name
