@@ -5,21 +5,28 @@ import './App.css';
 class App extends React.Component {
   // 1. Given the array of planet data render a list of each of the
   // planet names.
-  renderPlanets() {
-    return planetData.map((planet) => {
-      return (
-        <p>{planet.name}</p>
-      );
-    });
-  };
+  // renderPlanets() {
+  //   return planetData.map((planet) => {
+  //     return (
+  //       <p>{planet.name}</p>
+  //     );
+  //   });
+  // };
 
 
   // 2. Given the array of planet data, map through the array to
   // render a list displaying each of the plenet's name and their
   // diameter.
-  // renderPlanets() {
-  //   // Place code here
-  // }
+  renderPlanets() {
+    return planetData.map((planet) => {
+      return (
+        <div>
+        <h2>{planet.name}</h2>
+        <p>Diameter: {planet.diameter}</p>
+        </div>
+      )
+    })
+  }
 
 
   // 3. Given the array of planet data, map through the array to
