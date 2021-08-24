@@ -68,19 +68,19 @@ class App extends React.Component {
   // 5. Given the array of planet data 'find' the planet with the name
   // of 'Earth' and render its name, diameter, and length of day. Use
   // one of the array iterator methods to find the planet.
-  renderPlanets() {
-    const earth = planetData.find((planet) => {
-      return planet.name === 'Earth' 
-    })
-        const earthData = (
-          <div>
-            <h2>{earth.name}</h2>
-            <p>{earth.diameter}</p>
-            <p>Length of Day(hrs):{earth.lengthOfDay}</p>
-          </div>
-        )
-    return earthData
-  }
+  // renderPlanets() {
+  //   const earth = planetData.find((planet) => {
+  //     return planet.name === 'Earth' 
+  //   })
+  //       const earthData = (
+  //         <div>
+  //           <h2>{earth.name}</h2>
+  //           <p>{earth.diameter}</p>
+  //           <p>Length of Day(hrs):{earth.lengthOfDay}</p>
+  //         </div>
+  //       )
+  //   return earthData
+  // }
   
 
 
@@ -88,7 +88,17 @@ class App extends React.Component {
   // of day of 10.7 render it's name, diameter, and length of day. Use
   // one of the array iterator methods to find the planet.
   // renderPlanets() {
-  //   // Place code here
+  //   const randomPlanet = planetData.find((planet) => {
+  //     return planet.lengthOfDay === 10.7 
+  //   })
+  //   const planetD = (
+  //     <div>
+  //       <h2>{randomPlanet.name}</h2>
+  //       <p>{randomPlanet.diameter}</p>
+  //       <p>Length of Day(hrs):{randomPlanet.lengthOfDay}</p>
+  //     </div>
+  //   )
+  //   return planetD
   // }
 
   // Hungry for More:
@@ -98,9 +108,19 @@ class App extends React.Component {
   // the planets with a ring system.
   // - Map through the filtered array to render the list of planets
   // displaying their name, diameter, and length of day.
-  // renderPlanets() {
-  //   // Place code here
-  // }
+  renderPlanets() {
+    const randomPlanet = planetData.filter((planet) => {
+      return planet.ringSystem === true 
+    })
+    const planetD = randomPlanet.map((planet, idx) => {
+      return <div key={idx}>
+        <h2>{planet.name}</h2>
+        <p>{planet.diameter}</p>
+        <p>Length of Day(hrs):{planet.lengthOfDay}</p>
+      </div>
+    })
+    return planetD
+  }
 
   // 8.
   // - Given the array of planet data 'find' the planet with the name
