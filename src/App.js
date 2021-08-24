@@ -17,24 +17,31 @@ class App extends React.Component {
   // 2. Given the array of planet data, map through the array to
   // render a list displaying each of the plenet's name and their
   // diameter.
+  // renderPlanets() {
+  //   return planetData.map((planet) => {
+  //     return (
+  //       <div>
+  //       <h2>{planet.name}</h2>
+  //       <p>Diameter: {planet.diameter}</p>
+  //       </div>
+  //     )
+  //   })
+  // }
+
+
+  // 3. Given the array of planet data, map through the array to
+  // render a list displaying just the name and length of day of
+  // each planet.
   renderPlanets() {
     return planetData.map((planet) => {
       return (
         <div>
         <h2>{planet.name}</h2>
-        <p>Diameter: {planet.diameter}</p>
+        <p>Length of Day: {planet.lengthOfDay}</p>
         </div>
       )
     })
   }
-
-
-  // 3. Given the array of planet data, map through the array to
-  // render a list display just the name and length of day of
-  // each planet.
-  // renderPlanets() {
-  //   // Place code here
-  // }
 
 
   // 4. Given the array of planet data, map through the array to
